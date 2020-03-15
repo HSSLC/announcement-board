@@ -1,0 +1,117 @@
+body, html
+{
+	height:100%;
+	width:100%;
+	margin:0;
+	background-color:black;
+	display:flex;
+	overflow:hidden;
+	flex-wrap:wrap;
+}
+*
+{
+	font-family:"Roboto","Segoe UI","Arial","Microsoft Jhenghei","sans-serif"
+}
+
+#main
+{
+	display:flex;
+	flex-flow:column wrap;
+	height:calc(100% - 40px);
+	overflow:visible;
+	width:calc(100% - 80px);
+	position:relative;
+	transition:left .5s;
+	align-content:flex-start;
+}
+#left, #right
+{
+	height:calc(100% - 40px);
+	width:40px;
+	background-color:black;
+	z-index:1;
+	display:flex;
+	justify-content:center;
+	cursor:pointer;
+}
+#left::after
+{
+	content:"←";
+}
+#right::after
+{
+	content:"→";
+}
+#right::after, #left::after
+{
+	color:white;
+	align-self:center;
+}
+#nav
+{
+	height:40px;
+	width:100%;
+	color:white;
+	display:flex;
+	align-items:center;
+	justify-content:space-between;
+	padding:0 20px;
+}
+.block
+{
+	--block-margin:20px;
+	--block-padding:20px;
+	border-radius:4px;
+	background-color:white;
+	padding:var(--block-padding);
+	margin:var(--block-margin);
+	width:calc(100% / 3 - 2*var(--block-padding) - 2*var(--block-margin));
+	height:calc(50% - 2*var(--block-padding) - 2*var(--block-margin));
+	overflow-wrap:break-word;
+	overflow:auto;
+	font-size:150%;
+}
+.block::-webkit-scrollbar
+{
+	width:10px;
+	height:10px;
+	background-color:transparent;
+}
+.block::-webkit-scrollbar-thumb
+{
+	background-color:darkgray;
+	border-radius:4px;
+}
+.block::-webkit-scrollbar-thumb:active
+{
+	background-color:gray;
+}
+.title::before
+{
+	content:"標題：";
+}
+.source::before
+{
+	content:"來源：";
+}
+.deadTime::before
+{
+	content:"到期時間：";
+}
+.content::before
+{
+	content:"內容：";
+}
+.content
+{
+	font-weight:bold;
+}
+.title::before, .source::before, .deadTime::before, .content::before
+{
+	color:blue;
+	white-space:nowrap;
+}
+.title, .source, .deadTime, .content
+{
+	
+}
